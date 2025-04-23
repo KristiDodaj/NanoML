@@ -16,6 +16,18 @@ class Vector {
         Vector& operator+=(const Vector& rhs);
         Vector  operator+(const Vector& rhs) const;
 
+        Vector& operator-=(const Vector& rhs);
+        Vector  operator-(const Vector& rhs) const;
+
+        Vector& operator*=(double scalar);
+        Vector  operator*(double scalar) const;
+
+        Vector& operator/=(double scalar);
+        Vector  operator/(double scalar) const;
+
+        [[nodiscard]] double sum() const;
+        [[nodiscard]] double dot(const Vector& rhs) const;
+
     private:
         std::vector<double> data_;
     };
