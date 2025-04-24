@@ -7,6 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(nanoml
     src/vector.cpp
     src/matrix.cpp
+    src/loss.cpp
+    src/linear_regression.cpp
 )
 
 target_include_directories(nanoml PUBLIC include)
@@ -17,6 +19,14 @@ target_link_libraries(test_vector PRIVATE nanoml)
 add_executable(test_matrix tests/test_matrix.cpp)
 target_link_libraries(test_matrix PRIVATE nanoml)
 
+add_executable(test_loss tests/test_loss.cpp)
+target_link_libraries(test_loss PRIVATE nanoml)
+
+add_executable(test_linreg tests/test_linreg.cpp)
+target_link_libraries(test_linreg PRIVATE nanoml)
+
 enable_testing()
 add_test(NAME vector COMMAND test_vector)
 add_test(NAME matrix COMMAND test_matrix)
+add_test(NAME loss COMMAND test_loss)
+add_test(NAME linreg COMMAND test_linreg)
