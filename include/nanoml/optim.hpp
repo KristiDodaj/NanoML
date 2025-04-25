@@ -32,5 +32,4 @@ class GradientDescent {
     private:
         GDConfig cfg_;
     };
-
 }

@@ -2,7 +2,6 @@
 #include <cassert>  
 
 namespace ml {
-
     Matrix::Matrix(std::size_t rows, std::size_t cols, double val) 
         : rows_(rows), cols_(cols), data_(rows * cols, val) {}
     

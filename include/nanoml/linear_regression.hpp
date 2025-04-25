@@ -2,7 +2,6 @@
 #include "nanoml/model.hpp"
 
 namespace ml {
-
     class LinearRegression : public Model {
         public:
             explicit LinearRegression(std::size_t n_features);
@@ -16,5 +15,4 @@ namespace ml {
             Vector W;   // weight vector (n_features)
             double b;   // bias
     };
-
 }

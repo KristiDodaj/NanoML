@@ -2,7 +2,6 @@
 #include <cassert>
 
 namespace  ml {
-
     LinearRegression::LinearRegression(std::size_t n_features)
         : W(n_features, 0.0), b(0.0) {}
 
@@ -34,5 +33,4 @@ namespace  ml {
         for (std::size_t i = 0; i < X.rows(); ++i)
             b -= lr * dLdy[i];
     }
-
 }

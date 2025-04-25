@@ -9,6 +9,7 @@ add_library(nanoml
     src/matrix.cpp
     src/loss.cpp
     src/linear_regression.cpp
+    src/logistic_regression.cpp
 )
 
 target_include_directories(nanoml PUBLIC include)
@@ -25,8 +26,12 @@ target_link_libraries(test_loss PRIVATE nanoml)
 add_executable(test_linreg tests/test_linreg.cpp)
 target_link_libraries(test_linreg PRIVATE nanoml)
 
+add_executable(test_logreg tests/test_logreg.cpp)
+target_link_libraries(test_logreg PRIVATE nanoml)
+
 enable_testing()
 add_test(NAME vector COMMAND test_vector)
 add_test(NAME matrix COMMAND test_matrix)
 add_test(NAME loss COMMAND test_loss)
 add_test(NAME linreg COMMAND test_linreg)
+add_test(NAME logreg COMMAND test_logreg)

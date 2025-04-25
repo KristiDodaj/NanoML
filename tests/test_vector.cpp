@@ -1,7 +1,6 @@
 #include "nanoml/vector.hpp"
 #include <cassert>
 #include <iostream>
-#include <cmath> // For std::fabs
 
 // Helper function for approximate comparison of doubles
 bool approx_equal(double a, double b, double epsilon = 1e-9) {

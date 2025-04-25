@@ -2,7 +2,6 @@
 #include <cassert>  
 
 namespace ml {
-
     Vector::Vector(std::size_t n, double val) : data_(n, val) {}
 
     double Vector::operator[](std::size_t i) const {
