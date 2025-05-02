@@ -98,4 +98,13 @@ namespace ml {
                 result(c, r) = (*this)(r, c);
         return result;
     }
+
+    Vector Matrix::row(std::size_t r) const {
+        assert(r < rows_);
+        Vector result(cols_);
+        for (std::size_t c = 0; c < cols_; ++c) {
+            result[c] = (*this)(r, c);
+        }
+        return result;
+    }
 }

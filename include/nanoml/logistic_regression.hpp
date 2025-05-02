@@ -11,6 +11,10 @@ class LogisticRegression : public Model {
         void   backward(const Matrix& X,
                         const Vector& dLdy,
                         double lr) override;
+                        
+        bool save(const std::string& filename) const override;
+        bool load(const std::string& filename) override;
+        std::string get_model_type() const override { return "LogisticRegression"; }
 
     private:
         Vector W;

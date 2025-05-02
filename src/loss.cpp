@@ -1,7 +1,7 @@
 #include "nanoml/loss.hpp"
 #include <cassert>
 #include <cmath>
-#include <algorithm> // Required for std::clamp
+#include <algorithm>
 
 namespace ml {
     double mse(const Vector& y_hat, const Vector& y) {

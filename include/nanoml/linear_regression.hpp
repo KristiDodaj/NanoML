@@ -10,9 +10,16 @@ namespace ml {
             void   backward(const Matrix& X,
                             const Vector& dLdy,
                             double lr) override;
+            
+            void update_weight(std::size_t idx, double delta) { W[idx] += delta; }
+            void update_bias(double delta) { b += delta; }
+
+            bool save(const std::string& filename) const override;
+            bool load(const std::string& filename) override;
+            std::string get_model_type() const override { return "LinearRegression"; }
 
         private:
-            Vector W;   // weight vector (n_features)
-            double b;   // bias
+            Vector W;
+            double b;
     };
 }
